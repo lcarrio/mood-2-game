@@ -4,7 +4,8 @@ import Rifle from "../../public/rifle.svg";
 import ZowieEc2 from "../../public/zowieec2.webp";
 import Amazon from "../../public/amazon.png";
 import ISSA from "../../public/issa.png";
-export default function Mouse() {
+import Deathadder from "../../public/deathadder.png";
+export default function deathadder() {
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
      <div class="flex items-center justify-between bg-base-300  my-2 rounded-box " style={{ width: '50%'}}>
@@ -16,10 +17,10 @@ export default function Mouse() {
       </div>
       <div className="card w-96 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
-    <Image src={ZowieEc2} alt="ZowieEC2" className="rounded-xl" />
+    <Image src={Deathadder} alt="ZowieEC2" className="rounded-xl" />
   </figure>
   <div className="card-body items-center">
-    <h2 className="card-title">ZOWIE EC2 <div className="avatar">
+    <h2 className="card-title">RAZER DEATHADDER V3 <div className="avatar">
   <div className="w-6 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
     <Image src={ISSA} alt="ZowieEC2" />
   </div>
