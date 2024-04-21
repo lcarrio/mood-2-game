@@ -3,13 +3,15 @@ import Mouse from "../public/mouse.png";
 import Rifle from "../public/rifle.svg";
 import Pistol from "../public/pistol.svg";
 import Ar from "../public/assault-rifle.svg";
+import Logo from "../public/logo2.png";
+import Siegeicon from "../public/siegeicon.svg";
 export default function Home() {
   return (
     // Navbar with home button 
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       <div class="flex items-center justify-between bg-base-300  my-2 rounded-box " style={{ width: '50%'}}>
         <a class="btn btn-square btn-ghost  mx-2 my-2" href="/">
-          <Image src={Mouse} alt="Mouse" />
+          <Image src={Logo} alt="Mouse" />
         </a>
         <h1 class="font-bold text-4xl ">Game2Mouse</h1>
         <h1 className="mx-4"></h1>
@@ -34,7 +36,7 @@ export default function Home() {
         <h1 class="flex text-2xl font-bold"> <Image src={Ar} alt="ApexIcon" class="h-8 w-8" />Apex</h1>
       </a>
       <a class="btn btn-outline btn-primary  " href="/">
-        <h1 class="flex text-2xl font-bold"> <Image src={Ar} alt="ApexIcon" class="h-8 w-8" />Apex</h1>
+        <h1 class="flex text-2xl font-bold"> <Image src={Siegeicon} alt="ApexIcon" class="h-8 w-8" />Siege</h1>
       </a>
     </div>
   </div>
