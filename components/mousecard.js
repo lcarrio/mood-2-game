@@ -1,12 +1,12 @@
 
 const MouseCard = ({GameIcon,
     GameTittle,
-    mousename,
-    mouseimage,
-    mousedescription,
-    applogo,
-    playerpic,
-    amazonicon,
+    MouseName,
+    MouseImage,
+    MouseDescription,
+    AppLogo,
+    PlayerPic,
+    AmazonIcon,
 }) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
