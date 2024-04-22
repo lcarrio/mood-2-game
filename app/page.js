@@ -5,9 +5,9 @@ import Pistol from "../public/pistol.svg";
 import Ar from "../public/assault-rifle.svg";
 import Logo from "../public/logo2.png";
 import Siegeicon from "../public/siegeicon.svg";
+import Footer from "../components/footer";
 export default function Home() {
   return (
-    // Navbar with home button 
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       <div class="flex items-center justify-between bg-base-300  my-2 rounded-box " style={{ width: '50%'}}>
         <a class="btn btn-square btn-ghost  mx-2 my-2" href="/">
@@ -25,7 +25,7 @@ export default function Home() {
       </div>
       </div>
 
-    <div className="grid grid-cols-4 grid-rows-2 gap-4 justify-items px-20 ">
+    <div className="grid grid-cols-4 grid-rows-5 gap-4 justify-items px-20 ">
       <a class="btn btn-outline btn-primary  " href="/mouse">
         <h1 class="flex text-2xl font-bold"> <Image src={Rifle} alt="CsIcon" class="h-8 w-8" />CS:GO </h1>
       </a>
@@ -39,6 +39,7 @@ export default function Home() {
         <h1 class="flex text-2xl font-bold"> <Image src={Siegeicon} alt="ApexIcon" class="h-8 w-8" />Siege</h1>
       </a>
     </div>
+    <Footer CoffeeIcon={"/coffee-cup.svg"}/>
   </div>
   );
 }
