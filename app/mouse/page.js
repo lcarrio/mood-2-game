@@ -4,6 +4,8 @@ import Rifle from "../../public/rifle.svg";
 import ZowieEc2 from "../../public/zowieec2.webp";
 import Amazon from "../../public/amazon.png";
 import ISSA from "../../public/issa.png";
+import deathadder from "../deathadder/page";
+import deathadderComponenet from "../deathadder/page";
 export default function Mouse() {
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
@@ -34,6 +36,6 @@ export default function Mouse() {
     </div>
   </div>
 </div>
-    </div>
+    </div> 
 );
 }
