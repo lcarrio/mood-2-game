@@ -1,11 +1,7 @@
 import Image from "next/image";
-import Mouse from "../public/mouse.png";
-import Rifle from "../public/rifle.svg";
-import Pistol from "../public/pistol.svg";
-import Ar from "../public/assault-rifle.svg";
 import Logo from "../public/logo2.png";
-import Siegeicon from "../public/siegeicon.svg";
 import Footer from "../components/footer";
+import GameButton from "@/components/gamebutton";
 export default function Home() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
@@ -14,7 +10,7 @@ export default function Home() {
           <Image src={Logo} alt="Mouse" />
         </a>
         <h1 class="font-bold text-4xl ">Game2Mouse</h1>
-        <h1 className="mx-4"></h1>
+        <h1 className=""></h1>
     </div>
     <div className="hero">
       <div className="hero-content text-center">
@@ -25,19 +21,17 @@ export default function Home() {
       </div>
       </div>
 
-    <div className="grid grid-cols-4 grid-rows-5 gap-4 justify-items px-20 ">
-      <a class="btn btn-outline btn-primary  " href="/mouse">
-        <h1 class="flex text-2xl font-bold"> <Image src={Rifle} alt="CsIcon" class="h-8 w-8" />CS:GO </h1>
-      </a>
-      <a class="btn btn-outline btn-primary  " href="/">
-        <h1 class="flex text-2xl font-bold"> <Image src={Pistol} alt="ValIcon" class="h-8 w-8" />Valorant</h1>
-      </a>
-      <a class="btn btn-outline btn-primary  " href="/">
-        <h1 class="flex text-2xl font-bold"> <Image src={Ar} alt="ApexIcon" class="h-8 w-8" />Apex</h1>
-      </a>
-      <a class="btn btn-outline btn-primary  " href="/">
-        <h1 class="flex text-2xl font-bold"> <Image src={Siegeicon} alt="ApexIcon" class="h-8 w-8" />Siege</h1>
-      </a>
+    <div className="grid grid-cols-4 grid-rows-5 gap-4 justify-items ">
+      <GameButton GameIcon={"/rifle.svg"} GameName={"CS:GO"}/>
+      <GameButton GameIcon={"/pistol.svg"} GameName={"Valorant"}/>
+      <GameButton GameIcon={"/assault-rifle.svg"} GameName={"Apex"}/>
+      <GameButton GameIcon={"/siegeicon.svg"} GameName={"Rust"}/>
+      <GameButton GameIcon={"/siegeicon.svg"} GameName={"League"}/>
+      <GameButton GameIcon={"/siegeicon.svg"} GameName={"Dota"}/>
+      <GameButton GameIcon={"/siegeicon.svg"} GameName={"Smite"}/>
+      <GameButton GameIcon={"/siegeicon.svg"} GameName={"Warzone"}/>
+      <GameButton GameIcon={"/siegeicon.svg"} GameName={"Fortnite"}/>
+      <GameButton GameIcon={"/siegeicon.svg"} GameName={"HellDivers"}/>
     </div>
     <Footer CoffeeIcon={"/coffee-cup.svg"}/>
   </div>
