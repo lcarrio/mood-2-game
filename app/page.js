@@ -22,7 +22,7 @@ export default function Home() {
       </div>
 
     <div className="grid grid-cols-4 grid-rows-5 gap-4 justify-items ">
-      <GameButton GameIcon={"/rifle.svg"} GameName={"CS:GO"}/>
+      <GameButton GameIcon={"/rifle.svg"} GameName={"CS:GO"} PageLink={"/csgo"}/>
       <GameButton GameIcon={"/pistol.svg"} GameName={"Valorant"}/>
       <GameButton GameIcon={"/assault-rifle.svg"} GameName={"Apex"}/>
       <GameButton GameIcon={"/siegeicon.svg"} GameName={"Rust"}/>
