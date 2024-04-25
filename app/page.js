@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import GameButton from "@/components/gamebutton";
 export default function Home() {
   return (
+    <main>
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       <div class="flex items-center justify-between bg-base-300  my-2 rounded-box " style={{ width: '50%'}}>
         <a class="btn btn-square btn-ghost  mx-2 my-2" href="/">
@@ -35,5 +36,6 @@ export default function Home() {
     </div>
     <Footer CoffeeIcon={"/coffee-cup.svg"}/>
   </div>
+  </main>
   );
 }
