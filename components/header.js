@@ -1,7 +1,7 @@
 export default function Header({GameTittle,GameIcon}) {
     return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-    <div class="flex items-center justify-between bg-base-300  my-2 rounded-box " style={{ width: '50%'}}>
+    <div class="flex items-center justify-between bg-base-300  my-2 rounded-box " style={{ width: '75%'}}>
          <a class="btn btn-square btn-ghost  mx-2 my-2" href="/">
            <img src={"/logo2.png"} alt="Mouse" />
          </a>

@@ -4,9 +4,8 @@ import Footer from "../components/footer";
 import GameButton from "@/components/gamebutton";
 export default function Home() {
   return (
-    <main>
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <div class="flex items-center justify-between bg-base-300  my-2 rounded-box " style={{ width: '50%'}}>
+    <div class="min-h-full" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+      <div class="flex items-center justify-between bg-base-300  my-2 rounded-box " style={{ width: '75%'}}>
         <a class="btn btn-square btn-ghost  mx-2 my-2" href="/">
           <Image src={Logo} alt="Mouse" />
         </a>
@@ -22,7 +21,7 @@ export default function Home() {
       </div>
       </div>
 
-    <div className="grid grid-cols-4 grid-rows-5 gap-4 justify-items">
+    <div className="grid grid-cols-4 grid-rows-7 gap-4 justify-items">
       <GameButton GameIcon={"/rifle.svg"} GameName={"CS:GO"} PageLink={"/csgo"}/>
       <GameButton GameIcon={"/pistol.svg"} GameName={"Valorant"}/>
       <GameButton GameIcon={"/assault-rifle.svg"} GameName={"Apex"}/>
@@ -34,8 +33,7 @@ export default function Home() {
       <GameButton GameIcon={"/siegeicon.svg"} GameName={"Fortnite"}/>
       <GameButton GameIcon={"/siegeicon.svg"} GameName={"HellDivers"}/>
     </div>
-    <Footer CoffeeIcon={"/coffee-cup.svg"}/>
+    <Footer/>
   </div>
-  </main>
   );
 }
