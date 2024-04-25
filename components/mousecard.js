@@ -1,31 +1,41 @@
 import { IoIosCheckboxOutline } from "react-icons/io";
 import { FaCircle } from "react-icons/fa";
-const MouseCard = ({GameIcon,
+const MouseCard = ({
     MouseName,
     MouseImage,
-    PlayerPic,
     AmazonIcon,
 }) => {
   return (
+  
     <div className="card w-96 bg-base-100 shadow-xl">
-      <figure className="px-10 pt-10">
+      <figure className="px-15 pt-10">
         <img src={MouseImage} alt="mouseimage" className="rounded-xl" />
       </figure>
  <div className="card-body items-center">
-   <h2 className="card-title">{MouseName}<div className="avatar">
- <div className="w-6 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-   <img src={PlayerPic} alt="ZowieEC2" />
- </div>
-</div></h2>
-   
-<div className="flex flex-col w-full lg:flex-row">
-  <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-start">
-    <div className="flex gap-x-1 items-center"><IoIosCheckboxOutline></IoIosCheckboxOutline> Pros</div></div> 
-  <div className="divider lg:divider-horizontal"></div> 
-  <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">Cons</div>
+ <div className="divider divider-primary">{MouseName}
 </div>
    
-   <div className="card-actions">
+<div className="grid grid-cols-2 grid-rows-3 gap-4 justify-items">
+  <h1>Average Rating:</h1>
+  <h1>9.2 <div className="rating rating-xs">
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+</div></h1>
+  <h1>Pro Player Count:</h1>
+  <h1>5 players</h1>
+  <h1>Economy Rating:</h1>
+  <h1>5 players</h1>
+</div>
+   
+   <div className="card-actions p-4">
      <button className="btn btn-primary"><img src={AmazonIcon} class="w-6"></img>Check price</button>
    </div>
  </div>
@@ -33,3 +43,4 @@ const MouseCard = ({GameIcon,
   );
 }
 export default MouseCard;
+
