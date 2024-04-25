@@ -1,9 +1,11 @@
-import { IoIosCheckboxOutline } from "react-icons/io";
-import { FaCircle } from "react-icons/fa";
 const MouseCard = ({
     MouseName,
     MouseImage,
     AmazonIcon,
+    PlayerCount,
+    AmazonLink,
+    EconomyRating,
+    IGNRating
 }) => {
   return (
   
@@ -16,17 +18,15 @@ const MouseCard = ({
 </div>
    
 <div className="grid grid-cols-2 grid-rows-3 gap-4 justify-items">
-  <h1>Average Rating:</h1>
-  <h1>9.2 <div className="rating rating-xs">
-</div></h1>
+  <h1 class="">IGN Rating</h1>
+  <h1>{IGNRating}</h1>
   <h1>Pro Player Count:</h1>
-  <h1>5 players</h1>
-  <h1>Economy Rating:</h1>
-  <h1>5 players</h1>
+  <h1>{PlayerCount}</h1>
+  <h1>Economy Rating</h1>
+  <h1>{EconomyRating}</h1>
 </div>
-   
    <div className="card-actions p-4">
-     <button className="btn btn-primary"><img src={AmazonIcon} class="w-6"></img>Check price</button>
+     <a className="btn btn-primary"><img src={AmazonIcon} class="w-6" href={AmazonLink}></img>Check price</a>
    </div>
  </div>
     </div>

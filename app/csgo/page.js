@@ -10,18 +10,18 @@ export default function Mouse() {
           <h1></h1>
         <MouseCard 
         MouseName = "ZOWIE EC2"
-        MouseImage = "/zowieec2.webp"
+        MouseImage = "/zowieec2white.svg"
         PlayerPic={"/issa.png"}
         AmazonIcon={"amazon.png"}
         />
          <MouseCard 
-        MouseName = "ZOWIE EC2"
-        MouseImage = "/zowieec2.webp"
+        MouseName = "Deathadder V3"
+        MouseImage = "/deathadder2resized.png"
         PlayerPic={"/issa.png"}
         AmazonIcon={"amazon.png"}
         />
           <MouseCard 
-        MouseName = "ZOWIE EC2"
+        MouseName = "Logitech G Pro 2" 
         MouseImage = "/zowieec2.webp"
         PlayerPic={"/issa.png"}
         AmazonIcon={"amazon.png"}
