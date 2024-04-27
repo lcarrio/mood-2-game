@@ -1,16 +1,16 @@
-export default function Navbar({NavIcon}) {
+export default function Navbar({NavIcon, NavText}) {
   return (
     <div class="navbar bg-base-300 rounded-box shadow-lg mb-4 md:mb-6 max-w-[40rem] mx-auto">
       <div class="navbar-start">
-        <button class="btn btn-square btn-ghost" aria-label="go to home page">
+        <a class="btn btn-square btn-ghost" aria-label="go to home page" href="/" >
             <div class="relative w-full aspect-square m-1">
                 <img src={NavIcon} alt="NavIcon"></img>
             </div>
-        </button>
+        </a>
       </div>
       <div class="navbar-center">
         <div class="nunito text-center text-xl">
-          Mood2Game
+          {NavText}
         </div>
       </div>
       <div class="navbar-end">
