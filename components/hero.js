@@ -7,7 +7,7 @@ return(
         <div class="text-xl mb-4">How are you feeling now?</div>
         <div class="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
         <MoodButton MoodName="😁 CHEERFUL" PageLink="/games/cheerful"/>
-        <MoodButton MoodName="🤔 REFLECTIVE" PageLink="/"/>
+        <MoodButton MoodName="🤔 REFLECTIVE" PageLink="/games/reflective"/>
         <MoodButton MoodName="😔 GLOOMY" PageLink="/"/>
         <MoodButton MoodName="😂 HUMOROUS" PageLink="/"/>
         <MoodButton MoodName="🥺 SORROW" PageLink="/"/>
