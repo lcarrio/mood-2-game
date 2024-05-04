@@ -1,61 +1,26 @@
-"use client"; 
-import { useState} from 'react'; 
-  
-export default function Home() { 
-  const [inputData, setInputData] = useState(''); 
-  const [allData, setAllData] = useState([]); 
-  const [showAllData, setShowAllData] = useState(false); // New state variable 
-  
-  const handleSaveData = async () => { 
-    const response = await fetch('/api/saveData', { 
-      method: 'POST', 
-      headers: { 
-        'Content-Type': 'application/json', 
-      }, 
-      body: JSON.stringify({ data: inputData }), 
-    }); 
-  
-    if (response.ok) { 
-      alert('Data saved successfully!'); 
-      setInputData(''); 
-    } else { 
-      alert('Something went wrong!'); 
-    } 
-  }; 
-  
-  const fetchAllData = async () => { 
-    const response = await fetch('/api/getAllData'); 
-  
-    if (response.ok) { 
-      const data = await response.json(); 
-      setAllData(data); 
-      setShowAllData(true); 
-    } else { 
-      alert('Failed to fetch data!'); 
-    } 
-  }; 
-  
-  return ( 
-    <div> 
-      <input 
-        type="text"
-        value={inputData} 
-        onChange={(e) => setInputData(e.target.value)} 
-      /> 
-      <button onClick={handleSaveData}>Save Data</button> 
-      <button onClick={fetchAllData}>Get All Data</button> {/* Call fetchAllData on button click */} 
-        
-      {/* Conditionally render the div based on the state */} 
-      {showAllData && ( 
-        <div> 
-          <h2>All Data</h2> 
-          <ul> 
-            {allData.map((item) => ( 
-              <li key={item._id}>{item.data}</li> 
-            ))} 
-          </ul> 
-        </div> 
-      )} 
-    </div> 
-  ); 
+"use client";
+import useSWR from "swr";
+
+// Write a fetcher function to wrap the native fetch function and return the result of a call to the URL in JSON format
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
+export default function Reflective() {
+  // Set up SWR to run the fetcher function when calling "/api/staticdata"
+  // There are 3 possible states: (1) "loading" when data is null (2) "ready" when the data is returned (3) "error" when there was an error fetching the data
+  const { data, error } = useSWR("/api/staticdata", fetcher);
+
+  // Handle the error state
+  if (error) return <div>Failed to load</div>;
+  // Handle the loading state
+  if (!data) return <div>Loading...</div>;
+  // Handle the ready state and display the result contained in the data object mapped to the structure of the JSON file
+  return (
+    <div>
+      <h1>My Framework from file</h1>
+      <ul>
+        <li>Name: {data.record.name}</li>
+        <li>Language: {data.record.language}</li>
+      </ul>
+    </div>
+  );
 }
