@@ -1,8 +1,4 @@
-import MouseCard from "@/components/gamecard";
-import Footer from "@/components/footer";
-import Header from "@/components/navbar";
-import GameCard from "@/components/gamecard";
-import Navbar from "@/components/navbar";
+import Navbar from "../../../components/navbar";
 export default function Cheerful() {
   return (
     <div class="min-h-screen w-full p-2 lg:p-6 mb-20 md:mb-24 max-w-4xl mx-auto">
