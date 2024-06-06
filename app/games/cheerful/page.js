@@ -3,6 +3,8 @@ import { Query } from "../../api/db";
 
 export default function Cheerful() {
   const QueryGenre = "Indie;Strategy";
+  //const gameName = Query(QueryGenre).then((game) => game.name);
+  console.log(Query(QueryGenre));
   return (
     <div class="min-h-screen w-full p-2 lg:p-6 mb-20 md:mb-24 max-w-4xl mx-auto">
       <main>
