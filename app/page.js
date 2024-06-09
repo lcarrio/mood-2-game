@@ -1,7 +1,7 @@
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import Hero from "../components/hero";
-import { Query } from "./api/db";
+import { Query } from "./api/steamdb";
 
 export default async function Home() {
   return (
