@@ -1,9 +1,11 @@
 import Navbar from "../../../components/navbar";
 import { Query } from "../../api/steamdb";
 import { QueryAppid } from "../../api/descdb";
+import { QueryMedia } from "../../api/mediadb";
 const QueryGenre = "Indie;Strategy";
 const game = await Query(QueryGenre);
 const gameDesc = await QueryAppid(game.appid);
+const gameImage = await QueryMedia(game.appid);
 console.log(gameDesc);
 export default function Cheerful() {
   return (
@@ -11,6 +13,15 @@ export default function Cheerful() {
       <main>
         <Navbar NavIcon={"/logo2.png"} NavText={"Feeling 😁 Cheerful "} />
         <div class="card card-compact md:card-normal w-full md:w-[40rem] bg-base-100 shadow-xl mx-auto">
+          <figure>
+            <div class="w-full">
+              <iframe
+                class="w-full"
+                src={gameImage.header_image}
+                franeborder="0"
+              ></iframe>
+            </div>
+          </figure>
           {game.name}
           <div>{gameDesc.short_description}</div>
         </div>
