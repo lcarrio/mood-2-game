@@ -14,15 +14,11 @@ export default function Cheerful() {
         <Navbar NavIcon={"/logo2.png"} NavText={"Feeling 😁 Cheerful "} />
         <div class="card card-compact md:card-normal w-full md:w-[40rem] bg-base-100 shadow-xl mx-auto">
           <figure>
-            <div class="w-full">
-              <iframe
-                class="w-full"
-                src={gameImage.header_image}
-                franeborder="0"
-              ></iframe>
+            <div class="">
+              <iframe src={gameImage.header_image} class="w-full h-58" />
             </div>
           </figure>
-          {game.name}
+          {gameImage.header_image}
           <div>{gameDesc.short_description}</div>
         </div>
       </main>
