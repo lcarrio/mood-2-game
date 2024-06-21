@@ -1,12 +1,5 @@
-import Navbar from "../../../components/navbar";
+import MoodCard from "../../../components/moodcard";
 
 export default function Reflective() {
-  return (
-    <div class="min-h-screen w-full p-2 lg:p-6 mb-20 md:mb-24 max-w-4xl mx-auto">
-      <main>
-        <Navbar NavIcon={"/logo2.png"} NavText={"Feeling 🤔 Reflective"} />
-        <div class="card card-compact md:card-normal w-full md:w-[40rem] bg-base-100 shadow-xl mx-auto"></div>
-      </main>
-    </div>
-  );
+  return <MoodCard QueryCall="Indie;Strategy" Mood="Feeling Reflective" />;
 }

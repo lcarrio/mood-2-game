@@ -1,21 +1,19 @@
-import Navbar from "../../../components/navbar";
-import { Query } from "../../api/steamdb";
-import { QueryAppid } from "../../api/descdb";
-import { QueryMedia } from "../../api/mediadb";
-import Footer from "../../../components/footer";
+import { QueryAppid } from "../app/api/descdb";
+import { QueryMedia } from "../app/api/mediadb";
+import { Query } from "../app/api/steamdb";
+import Navbar from "./navbar";
 
-const QueryGenre = "Indie;Strategy";
-const game = await Query(QueryGenre);
-const gameDesc = await QueryAppid(game.appid);
-const gameImage = await QueryMedia(game.appid);
-console.log(gameDesc);
-
-export default function Cheerful() {
+export default async function MoodCard({ QueryCall, Mood }) {
+  const QueryGenre = QueryCall;
+  const game = await Query(QueryGenre);
+  const gameDesc = await QueryAppid(game.appid);
+  const gameImage = await QueryMedia(game.appid);
   const myArray = game.steamspy_tags.split(";");
+
   return (
     <div class="min-h-screen w-full p-2 lg:p-6 mb-20 md:mb-24 max-w-4xl mx-auto">
       <main>
-        <Navbar NavIcon={"/logo2.png"} NavText={"Feeling 😁 Cheerful "} />
+        <Navbar NavIcon={"/logo2.png"} NavText={Mood} />
         <div class="card card-compact md:card-normal w-full md:w-[40rem] bg-base-100 shadow-xl mx-auto">
           <figure>
             <div class="w-full">
