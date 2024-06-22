@@ -1,9 +1,10 @@
 const { MongoClient } = require("mongodb");
 // Replace the uri string with your connection string.
-const uri = process.env.MONGODB_URI;
-const client = new MongoClient(uri);
 
 export async function QueryMedia(appid) {
+  const uri = process.env.MONGODB_URI;
+
+const client = new MongoClient(uri);
   try {
     if (QueryMedia === undefined) {
       return "Query is undefined!";
@@ -13,7 +14,6 @@ export async function QueryMedia(appid) {
     // Query for a game
     const query = { steam_appid: appid };
     const game = await games.findOne(query);
-    console.log(game);
     //Return a game with
     return game;
   } finally {

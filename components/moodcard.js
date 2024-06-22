@@ -1,9 +1,13 @@
 import { QueryAppid } from "../app/api/descdb";
 import { QueryMedia } from "../app/api/mediadb";
 import { Query } from "../app/api/steamdb";
+import Footer from "./footer";
 import Navbar from "./navbar";
 
-export default async function MoodCard({ QueryCall, Mood }) {
+function refreshPage() {
+  location.reload();
+}
+export default async function MoodCard({ QueryCall, Mood , PageLink}) {
   const QueryGenre = QueryCall;
   const game = await Query(QueryGenre);
   const gameDesc = await QueryAppid(game.appid);
@@ -50,12 +54,13 @@ export default async function MoodCard({ QueryCall, Mood }) {
               {gameDesc.short_description}
             </div>
             <div class="card-actions justify-end">
-              <a class="btn md:btn-sm border-[1.5px] border-primary hover:btn-primary btn-outline btn-outline ">
+              <a class="btn md:btn-sm border-[1.5px] border-primary hover:btn-primary btn-outline btn-outline" href={PageLink}>
                 <span class="mr-1">➡️</span> NEXT
               </a>
             </div>
           </div>
         </div>
+       <Footer></Footer>
       </main>
     </div>
   );
