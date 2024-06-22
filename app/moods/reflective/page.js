@@ -1,4 +1,4 @@
 import MoodCard from "../../../components/moodcard";
 export default function Reflective() {
-    return <MoodCard QueryCall="RPG;Adventure" Mood="Feeling 🤔 Reflective"PageLink="/moods/reflective" />;
+    return <MoodCard QueryCall="Adventure" Mood="Feeling 🤔 Reflective"PageLink="/moods/reflective" />;
   }
