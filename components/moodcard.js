@@ -7,15 +7,19 @@ import RefreshPage from "./refreshpage";
 import getRandomInt from "./randint";
 
 export default async function MoodCard({ QueryCall, Mood, PageLink }) {
+  var gameIndex = 0;
   const QueryGenre = QueryCall;
   const games = await Query(QueryGenre);
-  const game = games[getRandomInt(games.length - 1)];
+  const game = games[gameIndex];
   const gameDesc = await QueryAppid(game.appid);
   const gameImage = await QueryMedia(game.appid);
   const myArray = game.steamspy_tags.split(";");
 
   return (
-    <div class="min-h-screen w-full p-2 lg:p-6 mb-20 md:mb-24 max-w-4xl mx-auto">
+    <div
+      id="myPage"
+      class="min-h-screen w-full p-2 lg:p-6 mb-20 md:mb-24 max-w-4xl mx-auto"
+    >
       <main>
         <Navbar NavIcon={"/logo2.png"} NavText={Mood} />
         <div class="card card-compact md:card-normal w-full md:w-[40rem] bg-base-100 shadow-xl mx-auto">
