@@ -1,15 +1,14 @@
 import { QueryAppid } from "../app/api/descdb";
 import { QueryMedia } from "../app/api/mediadb";
 import { Query } from "../app/api/steamdb";
+import Cheerful from "../app/moods/cheerful/page";
 import Footer from "./footer";
 import Navbar from "./navbar";
-
-function refreshPage() {
-  location.reload();
-}
-export default async function MoodCard({ QueryCall, Mood , PageLink}) {
+var gameIndex = 0;
+export default async function MoodCard({ QueryCall, Mood, PageLink }) {
   const QueryGenre = QueryCall;
-  const game = await Query(QueryGenre);
+  const games = await Query(QueryGenre);
+  const game = games[gameIndex];
   const gameDesc = await QueryAppid(game.appid);
   const gameImage = await QueryMedia(game.appid);
   const myArray = game.steamspy_tags.split(";");
@@ -54,13 +53,16 @@ export default async function MoodCard({ QueryCall, Mood , PageLink}) {
               {gameDesc.short_description}
             </div>
             <div class="card-actions justify-end">
-              <a class="btn md:btn-sm border-[1.5px] border-primary hover:btn-primary btn-outline btn-outline" href={PageLink}>
+              <button
+                class="btn md:btn-sm border-[1.5px] border-primary hover:btn-primary btn-outline btn-outline"
+                onClick={"huahua"}
+              >
                 <span class="mr-1">➡️</span> NEXT
-              </a>
+              </button>
             </div>
           </div>
         </div>
-       <Footer></Footer>
+        <Footer></Footer>
       </main>
     </div>
   );
