@@ -3,5 +3,4 @@
 // Refresh the page
 export default async function RefreshPage() {
   window.location.reload(true);
-  console.log("Page Refreshed!");
 }
