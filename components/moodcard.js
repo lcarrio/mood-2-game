@@ -10,7 +10,7 @@ export default async function MoodCard({ QueryCall, Mood, PageLink }) {
   var gameIndex = 0;
   const QueryGenre = QueryCall;
   const games = await Query(QueryGenre);
-  const game = games[getRandomInt(games.length)];
+  let game = games[getRandomInt(games.length)];
   const gameDesc = await QueryAppid(game.appid);
   const gameImage = await QueryMedia(game.appid);
   const myArray = game.steamspy_tags.split(";");
@@ -60,7 +60,7 @@ export default async function MoodCard({ QueryCall, Mood, PageLink }) {
             <div class="card-actions justify-end">
               <button
                 class="btn md:btn-sm border-[1.5px] border-primary hover:btn-primary btn-outline btn-outline"
-                onClick={RefreshPage}
+                onClick={RefreshPage()}
               >
                 <span class="mr-1">➡️</span> NEXT
               </button>
