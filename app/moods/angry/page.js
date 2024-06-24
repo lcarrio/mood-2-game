@@ -2,7 +2,7 @@ import MoodCard from "../../../components/moodcard";
 export default function Angry() {
   return (
     <MoodCard
-      QueryCall="Indie"
+      QueryCall="Action"
       Mood="Feeling 😡 Angry"
       PageLink="/moods/angry"
     />
