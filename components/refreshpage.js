@@ -1,7 +1,5 @@
-"use client";
-
 // Refresh the page
-export default async function RefreshPage() {
-  window.location.reload(true);
-  console.log("Page Refreshed!");
+"use client";
+export default async function RefreshPage(index) {
+  console.log([index]);
 }

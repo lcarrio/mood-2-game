@@ -1,3 +1,5 @@
+"use client";
+
 import { QueryAppid } from "../app/api/descdb";
 import { QueryMedia } from "../app/api/mediadb";
 import { Query } from "../app/api/steamdb";
@@ -5,11 +7,15 @@ import Footer from "./footer";
 import Navbar from "./navbar";
 import RefreshPage from "./refreshpage";
 import getRandomInt from "./randint";
+let index = 0;
 
+function handleClick() {
+  console.log("clicked");
+}
 export default async function MoodCard({ QueryCall, Mood, PageLink }) {
   const QueryGenre = QueryCall;
   const games = await Query(QueryGenre);
-  const game = games[getRandomInt(games.length)];
+  const game = games[index];
   const gameDesc = await QueryAppid(game.appid);
   const gameImage = await QueryMedia(game.appid);
   const myArray = game.steamspy_tags.split(";");
@@ -59,7 +65,7 @@ export default async function MoodCard({ QueryCall, Mood, PageLink }) {
             <div class="card-actions justify-end">
               <button
                 class="btn md:btn-sm border-[1.5px] border-primary hover:btn-primary btn-outline btn-outline"
-                onClick={RefreshPage}
+                onClick={handleClick}
               >
                 <span class="mr-1">➡️</span> NEXT
               </button>
