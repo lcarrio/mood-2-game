@@ -1,5 +1,3 @@
-"use client";
-
 import { QueryAppid } from "../app/api/descdb";
 import { QueryMedia } from "../app/api/mediadb";
 import { Query } from "../app/api/steamdb";
@@ -9,9 +7,6 @@ import RefreshPage from "./refreshpage";
 import getRandomInt from "./randint";
 let index = 0;
 
-function handleClick() {
-  console.log("clicked");
-}
 export default async function MoodCard({ QueryCall, Mood, PageLink }) {
   const QueryGenre = QueryCall;
   const games = await Query(QueryGenre);
@@ -65,7 +60,7 @@ export default async function MoodCard({ QueryCall, Mood, PageLink }) {
             <div class="card-actions justify-end">
               <button
                 class="btn md:btn-sm border-[1.5px] border-primary hover:btn-primary btn-outline btn-outline"
-                onClick={handleClick}
+                onClick={console.log("Previous")}
               >
                 <span class="mr-1">➡️</span> NEXT
               </button>
