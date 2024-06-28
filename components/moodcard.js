@@ -60,7 +60,8 @@ export default async function MoodCard({ QueryCall, Mood, PageLink }) {
             <div class="card-actions justify-end">
               <button
                 class="btn md:btn-sm border-[1.5px] border-primary hover:btn-primary btn-outline btn-outline"
-                onClick={console.log("Previous")}
+                onClick={location.replace(pageLink)}
+                I
               >
                 <span class="mr-1">➡️</span> NEXT
               </button>

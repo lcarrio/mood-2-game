@@ -1,5 +1,7 @@
 // Refresh the page
 "use client";
-export default async function RefreshPage(index) {
-  console.log([index]);
+import { useRouter } from "next/navigation";
+const router = useRouter();
+export default function RefreshPage() {
+  router.refresh();
 }
