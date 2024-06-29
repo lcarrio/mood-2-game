@@ -1,12 +1,10 @@
+
 import { QueryAppid } from "../app/api/descdb";
 import { QueryMedia } from "../app/api/mediadb";
 import { Query } from "../app/api/steamdb";
 import Footer from "./footer";
 import Navbar from "./navbar";
 
-function refreshPage() {
-  location.reload();
-}
 export default async function MoodCard({ QueryCall, Mood , PageLink}) {
   const QueryGenre = QueryCall;
   const game = await Query(QueryGenre);
@@ -54,7 +52,7 @@ export default async function MoodCard({ QueryCall, Mood , PageLink}) {
               {gameDesc.short_description}
             </div>
             <div class="card-actions justify-end">
-              <a class="btn md:btn-sm border-[1.5px] border-primary hover:btn-primary btn-outline btn-outline" href={PageLink}>
+              <a class="btn md:btn-sm border-[1.5px] border-primary hover:btn-primary btn-outline btn-outline" href={revalidate()}>
                 <span class="mr-1">➡️</span> NEXT
               </a>
             </div>

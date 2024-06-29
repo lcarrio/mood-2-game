@@ -1,5 +1,4 @@
 const { MongoClient } = require("mongodb");
-// Replace the uri string with your connection string.
 
 export async function QueryAppid(appid) {
   const uri = process.env.MONGODB_URI;
@@ -14,7 +13,7 @@ const client = new MongoClient(uri);
     // Query for a game
     const query = { steam_appid: appid };
     const game = await games.findOne(query);
-    //Return a game with
+    //Return a game =
     return game;
   } finally {
     // Ensures that the client will close when you finish/error
