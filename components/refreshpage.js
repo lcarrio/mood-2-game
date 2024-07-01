@@ -1,7 +1,7 @@
 // Refresh the page
 "use client";
-import { useRouter } from "next/navigation";
-const router = useRouter();
-export default function RefreshPage() {
-  router.refresh();
+
+export default function RefreshPage(index) {
+  // Update the page with a new game
+  location.reload();
 }
