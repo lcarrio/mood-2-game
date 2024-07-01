@@ -3,5 +3,5 @@
 
 export default function RefreshPage(index) {
   // Update the page with a new game
-  location.reload();
+  window.location.reload();
 }
