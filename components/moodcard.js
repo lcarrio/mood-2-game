@@ -10,7 +10,7 @@ let index = 0;
 export default async function MoodCard({ QueryCall, Mood, PageLink }) {
   const QueryGenre = QueryCall;
   const games = await Query(QueryGenre);
-  const game = games[index++];
+  const game = games[getRandomInt(games.length)];
   const gameDesc = await QueryAppid(game.appid);
   const gameImage = await QueryMedia(game.appid);
   const myArray = game.steamspy_tags.split(";");
