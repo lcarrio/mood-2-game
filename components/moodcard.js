@@ -1,19 +1,31 @@
-import { QueryAppid } from "../app/api/descdb";
+"use client";
+/*import { QueryAppid } from "../app/api/descdb";
 import { QueryMedia } from "../app/api/mediadb";
-import { Query } from "../app/api/steamdb";
+import { Query } from "../app/api/steamdb"; */
 import Footer from "./footer";
 import Navbar from "./navbar";
 import RefreshPage from "./refreshpage";
 import getRandomInt from "./randint";
-let index = 0;
 
-export default async function MoodCard({ QueryCall, Mood, PageLink }) {
-  const QueryGenre = QueryCall;
+export async function getServerSideProps() {
+  const database = client.db("mood2game");
+  const games = database.collection("steam_description");
+  // Query for a game
+  const query = { steam_appid: "10" };
+  const game = await games.findOne(query);
+  console.log(game.name);
+  return {
+    game,
+  };
+}
+
+export default function MoodCard({ QueryCall, Mood, PageLink }) {
+  /*const QueryGenre = QueryCall;
   const games = await Query(QueryGenre);
   const game = games[getRandomInt(games.length)];
   const gameDesc = await QueryAppid(game.appid);
   const gameImage = await QueryMedia(game.appid);
-  const myArray = game.steamspy_tags.split(";");
+  const myArray = game.steamspy_tags.split(";"); */
 
   return (
     <div
@@ -26,7 +38,7 @@ export default async function MoodCard({ QueryCall, Mood, PageLink }) {
           <figure>
             <div class="w-full">
               <img
-                src={gameImage.header_image}
+                src={"gameImage.header_image"}
                 alt="Italian Trulli"
                 class="w-full"
               />
