@@ -1,4 +1,5 @@
-"use client";
+import clientPromise from "./mongodb";
+import { GetServerSideProps } from 'next';
 /*import { QueryAppid } from "../app/api/descdb";
 import { QueryMedia } from "../app/api/mediadb";
 import { Query } from "../app/api/steamdb"; */
@@ -6,18 +7,8 @@ import Footer from "./footer";
 import Navbar from "./navbar";
 import RefreshPage from "./refreshpage";
 import getRandomInt from "./randint";
+import { get } from "http";
 
-export async function getServerSideProps() {
-  const database = client.db("mood2game");
-  const games = database.collection("steam_description");
-  // Query for a game
-  const query = { steam_appid: "10" };
-  const game = await games.findOne(query);
-  console.log(game.name);
-  return {
-    game,
-  };
-}
 
 export default function MoodCard({ QueryCall, Mood, PageLink }) {
   /*const QueryGenre = QueryCall;
@@ -84,3 +75,22 @@ export default function MoodCard({ QueryCall, Mood, PageLink }) {
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  try {
+      const client = await clientPromise;
+      const db = client.db("sample_mflix");
+      const movies = await db
+          .collection("movies")
+          .find({})
+          .sort({ metacritic: -1 })
+          .limit(20)
+          .toArray();
+      return {
+          props: { movies: JSON.parse(JSON.stringify(movies)) },
+      };
+  } catch (e) {
+      console.error(e);
+      return { props: { movies: [] } };
+  }
+};

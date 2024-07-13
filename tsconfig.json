@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/moodcard.js"  ],
   "exclude": [
     "node_modules"
   ]
