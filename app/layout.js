@@ -1,3 +1,4 @@
+import { GoogleTagManager } from "@next/third-parties/google";
 import {
   Inter,
   Poppins,
@@ -21,17 +22,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-RKF9XJKVG4"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-RKF9XJKVG4');
-        </script>
-
         <body className={poppins.className}>{children}</body>
+        <GoogleTagManager gtmId="G-RKF9XJKVG4" />
       </head>
     </html>
   );
